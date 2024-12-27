@@ -1,6 +1,18 @@
 // src/components/IngredientList.jsx
-const IngredientList = (props) => {
-    return <ul>// map through props.ingredients</ul>;
+
+import { availableIngredients } from "../App";
+
+const IngredientList = ({addToBurger}) => {
+    return <ul>
+        {
+            availableIngredients.map((ingredient, index) => (
+                <li key={index}>
+                     <p><strong>{ingredient.name}</strong> </p>
+                     <button onClick={() => addToBurger(ingredient)}>Add</button>
+                </li>
+
+            ))}
+        </ul>
   };
   
   export default IngredientList;
