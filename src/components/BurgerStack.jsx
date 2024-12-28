@@ -1,8 +1,8 @@
-// `src/components/BurgerStack.jsx`
+// src/components/BurgerStack.jsx
 
 const BurgerStack = ({ stack, removeFromBurger }) => {
     return (
-      <ul>
+      <ul className="burger-stack">
         {stack.length === 0 ? (
           <h1>Your burger is empty!</h1>
         ) : (
@@ -11,7 +11,7 @@ const BurgerStack = ({ stack, removeFromBurger }) => {
               <p>
                 <strong>{ingredient.name}</strong>
               </p>
-              <button onClick={() => removeFromBurger(index)}>Remove</button>
+              <button onClick={() => removeFromBurger(index)}>-</button>
             </li>
           )))}
       </ul>
